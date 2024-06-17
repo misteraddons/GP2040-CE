@@ -11,7 +11,7 @@
 
 #define BOARD_CONFIG_LABEL "MiSTercade V2"
 
-#define DEFAULT_INPUT_MODE INPUT_MODE_HID
+#define DEFAULT_INPUT_MODE INPUT_MODE_GENERIC
 #define DEFAULT_DPAD_MODE DPAD_MODE_DIGITAL
 
 // Main pin mapping Configuration
@@ -32,6 +32,11 @@
 #define GPIO_PIN_17 GpioAction::BUTTON_PRESS_S2     // S2     | Start  | Plus    | Start    | 10     | Start  |
 #define GPIO_PIN_14 GpioAction::BUTTON_PRESS_L3     // L3     | LS     | LS      | L3       | 11     | LS     |
 #define GPIO_PIN_15 GpioAction::BUTTON_PRESS_R3     // R3     | RS     | RS      | R3       | 12     | RS     |
+#define GPIO_PIN_18 GpioAction::BUTTON_PRESS_E1     // Twin Stick Up
+#define GPIO_PIN_19 GpioAction::BUTTON_PRESS_E2     // Twin Stick Down
+#define GPIO_PIN_20 GpioAction::BUTTON_PRESS_E3     // Twin Stick Left
+#define GPIO_PIN_21 GpioAction::BUTTON_PRESS_E4     // Twin Stick Right
+
 
 // Keyboard Mapping Configuration
 //                                            // GP2040 | Xinput | Switch  | PS3/4/5  | Dinput | Arcade |
@@ -168,6 +173,16 @@
 //#define HOTKEY_01_BUTTONS_MASK 514 // Down + Start
 //#define HOTKEY_01_DPAD_MASK 0      // None
 //#define HOTKEY_01_ACTION 4        // A1 / Home
+
+#define HOTKEY_00_AUX_MASK 0
+#define HOTKEY_00_BUTTONS_MASK 0
+#define HOTKEY_00_DPAD_MASK 0
+#define HOTKEY_00_ACTION 0
+
+#define HOTKEY_01_AUX_MASK 0
+#define HOTKEY_01_BUTTONS_MASK 0
+#define HOTKEY_01_DPAD_MASK 0
+#define HOTKEY_01_ACTION 0
 
 #define HOTKEY_02_AUX_MASK 0
 #define HOTKEY_02_BUTTONS_MASK 0

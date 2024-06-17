@@ -23,13 +23,15 @@ class GPGFX_TinySSD1306 : public GPGFX_DisplayBase {
 
         void drawEllipse(uint16_t x, uint16_t y, uint32_t radiusX, uint32_t radiusY, uint32_t color, uint8_t filled);
 
-        void drawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t filled);
+        void drawRectangle(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t filled, double rotationAngle = 0);
 
         void drawPolygon(uint16_t x, uint16_t y, uint16_t radius, uint16_t sides, uint32_t color, uint8_t filled, double rotation = 0);
 
         void drawSprite(uint8_t* spriteData, uint16_t width, uint16_t height, uint16_t pitch, uint16_t x, uint16_t y, uint8_t priority);
 
         void drawBuffer(uint8_t *pBuffer);
+
+        bool isSH1106(int detectedDisplay);
     private:
         typedef enum {
             SET_LOW_COLUMN = 0x00,
@@ -60,6 +62,13 @@ class GPGFX_TinySSD1306 : public GPGFX_DisplayBase {
             SET_VCOM_DETECT = 0xDB,
         } CommandOps;
 
+        typedef enum {
+            SCREEN_128x64_MAIN = 3,
+            SCREEN_128x64_ALT0 = 6,
+            SCREEN_128x64_ALT1 = 7,
+            SCREEN_132x64 = 8,
+        } ScreenAlternatives;
+
         bool _isPowered = false;
 
         static const uint16_t MAX_SCREEN_WIDTH = 128;
@@ -73,6 +82,8 @@ class GPGFX_TinySSD1306 : public GPGFX_DisplayBase {
 
         uint8_t frameBuffer[MAX_SCREEN_SIZE];
         uint8_t framePage = 0;
+
+        uint8_t screenType;
 };
 
 #endif
