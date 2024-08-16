@@ -37,6 +37,8 @@
 #define GPIO_PIN_20 GpioAction::BUTTON_PRESS_E3     // Twin Stick Left
 #define GPIO_PIN_21 GpioAction::BUTTON_PRESS_E4     // Twin Stick Right
 #define GPIO_PIN_22 GpioAction::BUTTON_PRESS_E5     // Player 2 Start
+#define GPIO_PIN_26 GpioAction::BUTTON_PRESS_B1     // B1     | A      | B       | Cross    | 2      | K1     |
+#define GPIO_PIN_27 GpioAction::BUTTON_PRESS_B2     // B2     | B      | A       | Circle   | 3      | K2     |
 
 
 // Keyboard Mapping Configuration
