@@ -4,6 +4,7 @@
 #include "drivers/astro/AstroDriver.h"
 #include "drivers/egret/EgretDriver.h"
 #include "drivers/hid/HIDDriver.h"
+#include "drivers/dualhid/DualHIDDriver.h"
 #include "drivers/keyboard/KeyboardDriver.h"
 #include "drivers/mdmini/MDMiniDriver.h"
 #include "drivers/neogeo/NeoGeoDriver.h"
@@ -34,6 +35,9 @@ void DriverManager::setup(InputMode mode) {
             break;
         case INPUT_MODE_GENERIC:
             driver = new HIDDriver();
+            break;
+        case INPUT_MODE_DUAL_HID:
+            driver = new DualHIDDriver();
             break;
         case INPUT_MODE_MDMINI:
             driver = new MDMiniDriver();
